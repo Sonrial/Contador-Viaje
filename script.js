@@ -12,7 +12,7 @@ const BOGOTA_OFFSET_MS = -5 * MS_PER_HOUR;
 // Fecha objetivo: 1 de abril de 2026, 00:00 en Bogotá (equivale a 05:00 UTC)
 const targetDateUTC = Date.UTC(2026, 3, 1, 5, 0, 0);
 
-// Canciones de 5 Seconds of Summer para ir rotando cada día
+// Canciones para ir rotando cada día
 const songs = [
   {
     title: "Eres Tú – Luis Fonsi",
@@ -126,7 +126,10 @@ const lovePhrases = [
   "El universo se hizo pequeño desde que decidí que mi mundo eres tú.",
   "Tus pasos hacia mí ya se escuchan en mi corazón.",
   "Te espero no con paciencia, sino con ilusión, que es mucho más bonita.",
+  // ----- ¡¡ERROR CORREGIDO!! -----
+  // La siguiente línea no tenía una coma al final, lo que rompía todo el script.
   "Cuando por fin te abrace, todos estos días van a tener sentido.",
+  // -------------------------------
   "Te amé desde que mis ojos te vieron, y te seguiré amando hasta que mis ojos dejen de ver.",
   "No hay distancia que impida que mi amor por ti crezca más, porque cada pensamiento mío llega hasta ti en cada latido.",
   "Si pudiera regalarte algo, te regalaría la capacidad de verte a través de mis ojos. Entonces, verías cuánto te amo.",
@@ -152,6 +155,7 @@ function mod(n, m) {
 // Actualiza la cuenta regresiva
 function updateCountdown() {
   const now = new Date();
+  // Usamos getTime() que siempre es UTC, así la resta contra targetDateUTC es correcta
   const diff = targetDateUTC - now.getTime();
 
   const daysEl = document.getElementById("days");
