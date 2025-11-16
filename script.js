@@ -15,6 +15,62 @@ const targetDateUTC = Date.UTC(2026, 3, 1, 5, 0, 0);
 // Canciones de 5 Seconds of Summer para ir rotando cada día
 const songs = [
   {
+    title: "Eres Tú – Luis Fonsi",
+    embedUrl: "https://open.spotify.com/embed/track/5v3J7CimKjVznZn2Pj1ng5"
+  },
+  {
+    title: "All of Me – John Legend",
+    embedUrl: "https://open.spotify.com/embed/track/1UBj9KDqlu2qYg2kzWwrzY"
+  },
+  {
+    title: "Amarillo – Shakira",
+    embedUrl: "https://open.spotify.com/embed/track/4VJVV1Jyy3bZVZobSsdxF0"
+  },
+  {
+    title: "Fix You – Coldplay",
+    embedUrl: "https://open.spotify.com/embed/track/3f95I6Wk7BZB3s29m7MIpH"
+  },
+  {
+    title: "Make You Feel My Love – Adele",
+    embedUrl: "https://open.spotify.com/embed/track/1I4vqOq0LlYkJTTI3hIpmR"
+  },
+  {
+    title: "Something – The Beatles",
+    embedUrl: "https://open.spotify.com/embed/track/1ZcLrgsz6zXMpw6uyvF9m2"
+  },
+  {
+    title: "I'm Yours – Jason Mraz",
+    embedUrl: "https://open.spotify.com/embed/track/0i6oGpaBlG7M25pzA2jHoD"
+  },
+  {
+    title: "We Found Love – Rihanna",
+    embedUrl: "https://open.spotify.com/embed/track/0aY1y26JrM24p9Yj6hVuJ2"
+  },
+  {
+    title: "Stand By Me – Ben E. King",
+    embedUrl: "https://open.spotify.com/embed/track/4F1K9tbT59WwFyZfgYbEX9"
+  },
+  {
+    title: "The Way You Look Tonight – Frank Sinatra",
+    embedUrl: "https://open.spotify.com/embed/track/0FlO17fq7A2o3TA7Jg3jw7"
+  },
+  {
+    title: "Para Tu Amor – Juanes",
+    embedUrl: "https://open.spotify.com/embed/track/4pucfRsz3Yk9TxmScc7Vq9"
+  },
+  {
+    title: "Stay With Me – Sam Smith",
+    embedUrl: "https://open.spotify.com/embed/track/1Iu6vVqZBwYh6v1AM85ts6"
+  },
+  {
+    title: "If I Ain't Got You – Alicia Keys",
+    embedUrl: "https://open.spotify.com/embed/track/1heFAhF9NzLDhY77V6Fv19"
+  },
+  {
+    title: "Can't Help Falling In Love – Elvis Presley",
+    embedUrl: "https://open.spotify.com/embed/track/7d1xzo0a9Rhq9nDbZf4r2n"
+  },
+  {
     title: "Youngblood – 5 Seconds of Summer",
     embedUrl: "https://open.spotify.com/embed/track/2iUXsYOEPhVqEBwsqP70rE"
   },
@@ -71,6 +127,21 @@ const lovePhrases = [
   "Tus pasos hacia mí ya se escuchan en mi corazón.",
   "Te espero no con paciencia, sino con ilusión, que es mucho más bonita.",
   "Cuando por fin te abrace, todos estos días van a tener sentido."
+  "Te amé desde que mis ojos te vieron, y te seguiré amando hasta que mis ojos dejen de ver.",
+  "No hay distancia que impida que mi amor por ti crezca más, porque cada pensamiento mío llega hasta ti en cada latido.",
+  "Si pudiera regalarte algo, te regalaría la capacidad de verte a través de mis ojos. Entonces, verías cuánto te amo.",
+  "El amor no se mide por el tiempo que compartimos, sino por la intensidad con que vivimos cada momento juntos.",
+  "Cada segundo que paso sin ti, me encuentro soñando con el siguiente segundo en que te veré.",
+  "Eres el sueño que nunca quiero despertar, la melodía que mi corazón siempre quiere escuchar.",
+  "Mi amor por ti es más grande que todos los mares, más profundo que todos los cielos, y eterno como las estrellas.",
+  "No necesito un cielo para saber que soy afortunado. Solo necesito tus ojos para ver mi vida llena de paz.",
+  "No tengo palabras para describir lo que siento, solo mi corazón puede hablar y su latido te dice todo.",
+  "Cada vez que te miro, encuentro un nuevo motivo para amarte más. No hay final en el amor que te tengo.",
+  "En cada abrazo tuyo se encuentra la paz que mi alma necesita. En cada beso tuyo, la eternidad de mi amor por ti.",
+  "Si cada estrella del cielo representara un motivo para amarte, no habría suficientes estrellas para mostrar lo que siento por ti.",
+  "Nuestro amor es como un río, fluye suave, pero con la fuerza de un torrente que no conoce barreras.",
+  "Me perdí en ti, y ahora que estoy en ti, sé que no quiero encontrar el camino de regreso.",
+  "Eres mi todo, la razón por la que sonrío sin razón, la luz que ilumina incluso mis días más oscuros."
 ];
 
 // Función módulo segura para índices (maneja números negativos)
