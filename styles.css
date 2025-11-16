@@ -216,7 +216,8 @@ body {
   font-weight: 500;
 }
 
-.spotify-container {
+/* CAMBIO AQUÍ: Renombrada la clase */
+.music-container {
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid rgba(137, 185, 173, 0.5);
