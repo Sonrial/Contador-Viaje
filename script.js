@@ -1,6 +1,6 @@
 // script.js
 
-// ... (constantes de tiempo no cambian) ...
+// Constantes de tiempo
 const MS_PER_SECOND = 1000;
 const MS_PER_MINUTE = MS_PER_SECOND * 60;
 const MS_PER_HOUR = MS_PER_MINUTE * 60;
@@ -9,102 +9,103 @@ const MS_PER_DAY = MS_PER_HOUR * 24;
 // Bogotá es UTC-5 (sin cambios por horario de verano)
 const BOGOTA_OFFSET_MS = -5 * MS_PER_HOUR;
 
-// ... (fecha objetivo no cambia) ...
-// ... (constantes de tiempo y fecha objetivo no cambian) ...
+// Fecha objetivo: 1 de abril de 2026, 00:00 en Bogotá (equivale a 05:00 UTC)
+const targetDateUTC = Date.UTC(2026, 3, 1, 5, 0, 0);
 
-// ... (la lista de 'songs' no cambia) ...
+// Canciones de 5 Seconds of Summer para ir rotando cada día
 const songs = [
   {
     title: "Eres Tú – Luis Fonsi",
-    embedUrl: "https://www.youtube.com/embed/11-e1I-FmB4" // Versión Audio
+    embedUrl: "https://open.spotify.com/embed/track/5v3J7CimKjVznZn2Pj1ng5"
   },
   {
     title: "All of Me – John Legend",
-    embedUrl: "https://www.youtube.com/embed/f-tTQF4_GrY" // Versión Topic
+    embedUrl: "https://open.spotify.com/embed/track/1UBj9KDqlu2qYg2kzWwrzY"
   },
   {
     title: "Amarillo – Shakira",
-    embedUrl: "https://www.youtube.com/embed/pD4s2-N6tK4" // Versión Topic
+    embedUrl: "https://open.spotify.com/embed/track/4VJVV1Jyy3bZVZobSsdxF0"
   },
   {
     title: "Fix You – Coldplay",
-    embedUrl: "https://www.youtube.com/embed/sxj-l2aCgX0" // Versión Topic
+    embedUrl: "https://open.spotify.com/embed/track/3f95I6Wk7BZB3s29m7MIpH"
   },
   {
     title: "Make You Feel My Love – Adele",
-    embedUrl: "https://www.youtube.com/embed/Y-l-g_y_n-I" // Versión Topic
+    embedUrl: "https://open.spotify.com/embed/track/1I4vqOq0LlYkJTTI3hIpmR"
   },
   {
     title: "Something – The Beatles",
-    embedUrl: "https://www.youtube.com/embed/Z0y-i-v1S-s" // Versión Topic
+    embedUrl: "https://open.spotify.com/embed/track/1ZcLrgsz6zXMpw6uyvF9m2"
   },
   {
     title: "I'm Yours – Jason Mraz",
-    embedUrl: "https://www.youtube.com/embed/t2s-s0QpQdE" // Versión Topic
+    embedUrl: "https://open.spotify.com/embed/track/0i6oGpaBlG7M25pzA2jHoD"
   },
   {
     title: "We Found Love – Rihanna",
-    embedUrl: "https://www.youtube.com/embed/U33t-flzS7E" // Versión Topic
+    embedUrl: "https://open.spotify.com/embed/track/0aY1y26JrM24p9Yj6hVuJ2"
   },
   {
     title: "Stand By Me – Ben E. King",
-    embedUrl: "https://www.youtube.com/embed/IGrU1j1m-fU" // Versión Topic
+    embedUrl: "https://open.spotify.com/embed/track/4F1K9tbT59WwFyZfgYbEX9"
   },
   {
     title: "The Way You Look Tonight – Frank Sinatra",
-    embedUrl: "https://www.youtube.com/embed/h9M8N-mQh3I" // Video (este sí funciona)
+    embedUrl: "https://open.spotify.com/embed/track/0FlO17fq7A2o3TA7Jg3jw7"
   },
   {
     title: "Para Tu Amor – Juanes",
-    embedUrl: "https://www.youtube.com/embed/JmB6hOOh-pE" // Versión Topic
+    embedUrl: "https://open.spotify.com/embed/track/4pucfRsz3Yk9TxmScc7Vq9"
   },
   {
     title: "Stay With Me – Sam Smith",
-    embedUrl: "https://www.youtube.com/embed/aIuBfhw-S-M" // Versión Topic
+    embedUrl: "https://open.spotify.com/embed/track/1Iu6vVqZBwYh6v1AM85ts6"
   },
   {
     title: "If I Ain't Got You – Alicia Keys",
-    embedUrl: "https://www.youtube.com/embed/g0k2v2tqKTE" // Versión Topic
+    embedUrl: "https://open.spotify.com/embed/track/1heFAhF9NzLDhY77V6Fv19"
   },
   {
     title: "Can't Help Falling In Love – Elvis Presley",
-    embedUrl: "https://www.youtube.com/embed/qvt_i-v-s1s" // Versión Topic
+    embedUrl: "https://open.spotify.com/embed/track/7d1xzo0a9Rhq9nDbZf4r2n"
   },
   {
     title: "Youngblood – 5 Seconds of Summer",
-    embedUrl: "https://www.youtube.com/embed/eDYm-0O-rFk" // Versión Topic
+    embedUrl: "https://open.spotify.com/embed/track/2iUXsYOEPhVqEBwsqP70rE"
   },
   {
     title: "She Looks So Perfect – 5 Seconds of Summer",
-    embedUrl: "https://www.youtube.com/embed/q3y-s-d-P9M" // Versión Topic
+    embedUrl: "https://open.spotify.com/embed/track/1gugDOSMREb34Xo0c1PlxM"
   },
   {
     title: "Amnesia – 5 Seconds of Summer",
-    embedUrl: "https://www.youtube.com/embed/L1ZGED1o3oE" // Versión Topic
+    embedUrl: "https://open.spotify.com/embed/track/1JCCdiru7fhstOIF4N7WJC"
   },
   {
     title: "Teeth – 5 Seconds of Summer",
-    embedUrl: "https://www.youtube.com/embed/eYUKQ-yAIsY" // Versión Topic
+    embedUrl:
+      "https://open.spotify.com/embed/track/26wLOs3ZuHJa2Ihhx6QIE6?utm_source=generator"
   },
   {
     title: "Jet Black Heart – 5 Seconds of Summer",
-    embedUrl: "https://www.youtube.com/embed/A1Uj-PISW_M" // Versión Topic
+    embedUrl: "https://open.spotify.com/embed/track/1KAkTstWzEOT24VqCDkKdl"
   },
   {
     title: "Want You Back – 5 Seconds of Summer",
-    embedUrl: "https://www.youtube.com/embed/vD0qFSAWlQY" // Versión Topic
+    embedUrl: "https://open.spotify.com/embed/track/2vHfabj6nFebekTYODqntl"
   },
   {
     title: "Ghost of You – 5 Seconds of Summer",
-    embedUrl: "https://www.youtube.com/embed/Y-M9hPhNf6w" // Versión Topic
+    embedUrl: "https://open.spotify.com/embed/track/1MhXdlCQPnO56T57MfmaRm"
   },
   {
     title: "Easier – 5 Seconds of Summer",
-    embedUrl: "https://www.youtube.com/embed/H37Hn-aVl-k" // Versión Topic
+    embedUrl: "https://open.spotify.com/embed/track/2bjUEg4jBtKBlPdNrTAppI"
   }
 ];
 
-// ... (la lista de 'lovePhrases' no cambia) ...
+// Frases de amor que cambian cada 24 horas (autoría original)
 const lovePhrases = [
   "Cada día que pasa faltan menos latidos para coincidir con los tuyos.",
   "La distancia cuenta kilómetros, pero mi corazón cuenta besos pendientes.",
@@ -146,12 +147,12 @@ const lovePhrases = [
   "Eres mi todo, la razón por la que sonrío sin razón, la luz que ilumina incluso mis días más oscuros."
 ];
 
-// ... (función 'mod' no cambia) ...
+// Función módulo segura para índices (maneja números negativos)
 function mod(n, m) {
   return ((n % m) + m) % m;
 }
 
-// ... (función 'updateCountdown' no cambia) ...
+// Actualiza la cuenta regresiva
 function updateCountdown() {
   const now = new Date();
   // Usamos getTime() que siempre es UTC, así la resta contra targetDateUTC es correcta
@@ -208,33 +209,20 @@ function updateDailyContent() {
 
   const phraseEl = document.getElementById("love-phrase");
   const songTitleEl = document.getElementById("song-title");
-  
-  // CAMBIO AQUÍ: Buscamos la etiqueta de imagen, no el iframe
-  const songCoverEl = document.getElementById("song-cover-img");
+  const spotifyIframe = document.getElementById("spotify-iframe");
 
   if (phraseEl) {
     phraseEl.textContent = lovePhrases[phraseIndex];
   }
 
-  // CAMBIO AQUÍ: Actualizamos la lógica para la imagen
-  if (songTitleEl && songCoverEl) {
+  if (songTitleEl && spotifyIframe) {
     const song = songs[songIndex];
     songTitleEl.textContent = song.title;
-
-    // 1. Extraemos el ID del video del enlace 'embedUrl'
-    // p.ej. "https://www.youtube.com/embed/H37Hn-aVl-k" -> "H37Hn-aVl-k"
-    const videoId = song.embedUrl.split('/').pop();
-
-    // 2. Construimos la URL de la miniatura en alta calidad
-    const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-
-    // 3. Asignamos la URL al 'src' de la imagen y el 'alt'
-    songCoverEl.src = thumbnailUrl;
-    songCoverEl.alt = song.title;
+    spotifyIframe.src = song.embedUrl;
   }
 }
 
-// ... (el 'DOMContentLoaded' no cambia) ...
+// Inicializa todo cuando el DOM está listo
 document.addEventListener("DOMContentLoaded", () => {
   updateCountdown();
   // Actualizar la cuenta regresiva cada segundo
