@@ -72,7 +72,7 @@ const songs = [
   },
   {
     title: "Youngblood – 5 Seconds of Summer",
-    embedUrl: "https://www.youtube.com/embed/-RJSbO8YLgI"
+    embedUrl: "https://www.youtube.com/watch?v=-RJSbO8UZVY"
   },
   {
     title: "She Looks So Perfect – 5 Seconds of Summer",
