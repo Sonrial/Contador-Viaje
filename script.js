@@ -126,7 +126,7 @@ const lovePhrases = [
   "El universo se hizo pequeño desde que decidí que mi mundo eres tú.",
   "Tus pasos hacia mí ya se escuchan en mi corazón.",
   "Te espero no con paciencia, sino con ilusión, que es mucho más bonita.",
-  "Cuando por fin te abrace, todos estos días van a tener sentido."
+  "Cuando por fin te abrace, todos estos días van a tener sentido.",
   "Te amé desde que mis ojos te vieron, y te seguiré amando hasta que mis ojos dejen de ver.",
   "No hay distancia que impida que mi amor por ti crezca más, porque cada pensamiento mío llega hasta ti en cada latido.",
   "Si pudiera regalarte algo, te regalaría la capacidad de verte a través de mis ojos. Entonces, verías cuánto te amo.",
@@ -141,7 +141,7 @@ const lovePhrases = [
   "Si cada estrella del cielo representara un motivo para amarte, no habría suficientes estrellas para mostrar lo que siento por ti.",
   "Nuestro amor es como un río, fluye suave, pero con la fuerza de un torrente que no conoce barreras.",
   "Me perdí en ti, y ahora que estoy en ti, sé que no quiero encontrar el camino de regreso.",
-  "Eres mi todo, la razón por la que sonrío sin razón, la luz que ilumina incluso mis días más oscuros.",
+  "Eres mi todo, la razón por la que sonrío sin razón, la luz que ilumina incluso mis días más oscuros."
 ];
 
 // Función módulo segura para índices (maneja números negativos)
