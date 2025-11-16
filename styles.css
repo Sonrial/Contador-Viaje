@@ -225,6 +225,13 @@ body {
   margin-bottom: 0.5rem;
 }
 
+/* AÑADIMOS ESTA NUEVA REGLA PARA LA IMAGEN */
+.song-cover {
+  width: 100%;
+  display: block; /* Para que encaje bien en el div */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
 .song-note {
   font-size: 0.8rem;
   color: var(--text-soft);
