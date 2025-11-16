@@ -1,0 +1,243 @@
+:root {
+  --pink: #ffc5c5;
+  --peach: #ffebd8;
+  --green: #c7dca7;
+  --teal: #89b9ad;
+  --text-main: #3a3a3a;
+  --text-soft: #676767;
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  color: var(--text-main);
+  background: linear-gradient(135deg, var(--pink), var(--peach));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.background-hearts {
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(
+      circle at 10% 20%,
+      rgba(255, 197, 197, 0.7) 0,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 80% 0%,
+      rgba(199, 220, 167, 0.65) 0,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 0% 100%,
+      rgba(137, 185, 173, 0.6) 0,
+      transparent 55%
+    );
+  opacity: 0.8;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.main-container {
+  max-width: 960px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 24px;
+  border: 2px solid var(--green);
+  box-shadow: var(--shadow-soft);
+  padding: 2rem 1.5rem 1.75rem;
+  backdrop-filter: blur(8px);
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .main-container {
+    padding: 2.5rem 3rem 2.25rem;
+  }
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-family: "Dancing Script", "Poppins", cursive;
+  font-size: 2.6rem;
+  margin-bottom: 0.5rem;
+  color: var(--teal);
+}
+
+.caption {
+  font-size: 0.95rem;
+  color: var(--text-soft);
+}
+
+.caption strong {
+  color: var(--text-main);
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 600px) {
+  .countdown {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.time-box {
+  background: linear-gradient(145deg, var(--peach), #ffffff);
+  border-radius: 18px;
+  padding: 0.8rem 0.3rem 0.9rem;
+  border: 1px solid rgba(137, 185, 173, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.time-box::before {
+  content: "♥";
+  position: absolute;
+  font-size: 2.2rem;
+  color: rgba(255, 197, 197, 0.3);
+  right: -0.3rem;
+  top: -0.7rem;
+}
+
+.time-number {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--teal);
+}
+
+.time-label {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-soft);
+  margin-top: 0.1rem;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 800px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1.25rem 1.3rem 1.3rem;
+  border: 1px solid rgba(199, 220, 167, 0.6);
+  box-shadow: var(--shadow-soft);
+  position: relative;
+}
+
+.card h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: var(--teal);
+}
+
+.phrase-card::before,
+.song-card::before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 999px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 197, 197, 0.85),
+    transparent 60%
+  );
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.phrase-card::before {
+  top: -15px;
+  left: -15px;
+}
+
+.song-card::before {
+  bottom: -20px;
+  right: -20px;
+}
+
+.love-phrase {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-main);
+}
+
+.song-title {
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.spotify-container {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(137, 185, 173, 0.5);
+  background: #000;
+  margin-bottom: 0.5rem;
+}
+
+.song-note {
+  font-size: 0.8rem;
+  color: var(--text-soft);
+}
+
+.footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-soft);
+}
+
+.footer::before {
+  content: "♡";
+  margin-right: 0.3rem;
+  color: var(--pink);
+}
