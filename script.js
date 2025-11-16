@@ -141,7 +141,7 @@ const lovePhrases = [
   "Si cada estrella del cielo representara un motivo para amarte, no habría suficientes estrellas para mostrar lo que siento por ti.",
   "Nuestro amor es como un río, fluye suave, pero con la fuerza de un torrente que no conoce barreras.",
   "Me perdí en ti, y ahora que estoy en ti, sé que no quiero encontrar el camino de regreso.",
-  "Eres mi todo, la razón por la que sonrío sin razón, la luz que ilumina incluso mis días más oscuros."
+  "Eres mi todo, la razón por la que sonrío sin razón, la luz que ilumina incluso mis días más oscuros.",
 ];
 
 // Función módulo segura para índices (maneja números negativos)
