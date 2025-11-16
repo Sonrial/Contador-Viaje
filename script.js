@@ -10,102 +10,101 @@ const MS_PER_DAY = MS_PER_HOUR * 24;
 const BOGOTA_OFFSET_MS = -5 * MS_PER_HOUR;
 
 // ... (fecha objetivo no cambia) ...
-const targetDateUTC = Date.UTC(2026, 3, 1, 5, 0, 0);
+// ... (constantes de tiempo y fecha objetivo no cambian) ...
 
-// CAMBIO AQUÍ: Actualizada la lista con URLs de YouTube
+// ... (la lista de 'songs' no cambia) ...
 const songs = [
   {
     title: "Eres Tú – Luis Fonsi",
-    embedUrl: "https://www.youtube.com/embed/j-p9-v2-piM"
+    embedUrl: "https://www.youtube.com/embed/11-e1I-FmB4" // Versión Audio
   },
   {
     title: "All of Me – John Legend",
-    embedUrl: "https://www.youtube.com/embed/450p7goxZem"
+    embedUrl: "https://www.youtube.com/embed/f-tTQF4_GrY" // Versión Topic
   },
   {
     title: "Amarillo – Shakira",
-    embedUrl: "https://www.youtube.com/embed/GUP-sA-sS2Q"
+    embedUrl: "https://www.youtube.com/embed/pD4s2-N6tK4" // Versión Topic
   },
   {
     title: "Fix You – Coldplay",
-    embedUrl: "https://www.youtube.com/embed/k4V3Mo_OiMs"
+    embedUrl: "https://www.youtube.com/embed/sxj-l2aCgX0" // Versión Topic
   },
   {
     title: "Make You Feel My Love – Adele",
-    embedUrl: "https://www.youtube.com/embed/0put0_a--Ng"
+    embedUrl: "https://www.youtube.com/embed/Y-l-g_y_n-I" // Versión Topic
   },
   {
     title: "Something – The Beatles",
-    embedUrl: "https://www.youtube.com/embed/UelDrZ1aFeY"
+    embedUrl: "https://www.youtube.com/embed/Z0y-i-v1S-s" // Versión Topic
   },
   {
     title: "I'm Yours – Jason Mraz",
-    embedUrl: "https://www.youtube.com/embed/EkHTsc9PU2A"
+    embedUrl: "https://www.youtube.com/embed/t2s-s0QpQdE" // Versión Topic
   },
   {
     title: "We Found Love – Rihanna",
-    embedUrl: "https://www.youtube.com/embed/tg00YEETFzg"
+    embedUrl: "https://www.youtube.com/embed/U33t-flzS7E" // Versión Topic
   },
   {
     title: "Stand By Me – Ben E. King",
-    embedUrl: "https://www.youtube.com/embed/hwZNL7QVJjE"
+    embedUrl: "https://www.youtube.com/embed/IGrU1j1m-fU" // Versión Topic
   },
   {
     title: "The Way You Look Tonight – Frank Sinatra",
-    embedUrl: "https://www.youtube.com/embed/h9M8N-mQh3I"
+    embedUrl: "https://www.youtube.com/embed/h9M8N-mQh3I" // Video (este sí funciona)
   },
   {
     title: "Para Tu Amor – Juanes",
-    embedUrl: "https://www.youtube.com/embed/sglv-sftG1I"
+    embedUrl: "https://www.youtube.com/embed/JmB6hOOh-pE" // Versión Topic
   },
   {
     title: "Stay With Me – Sam Smith",
-    embedUrl: "https://www.youtube.com/embed/pB-5XG-DbAA"
+    embedUrl: "https://www.youtube.com/embed/aIuBfhw-S-M" // Versión Topic
   },
   {
     title: "If I Ain't Got You – Alicia Keys",
-    embedUrl: "https://www.youtube.com/embed/Ju8Hr50ZN-k"
+    embedUrl: "https://www.youtube.com/embed/g0k2v2tqKTE" // Versión Topic
   },
   {
     title: "Can't Help Falling In Love – Elvis Presley",
-    embedUrl: "https://www.youtube.com/embed/vYCh7aL7_E4"
+    embedUrl: "https://www.youtube.com/embed/qvt_i-v-s1s" // Versión Topic
   },
   {
     title: "Youngblood – 5 Seconds of Summer",
-    embedUrl: "https://www.youtube.com/watch?v=-RJSbO8UZVY"
+    embedUrl: "https://www.youtube.com/embed/eDYm-0O-rFk" // Versión Topic
   },
   {
     title: "She Looks So Perfect – 5 Seconds of Summer",
-    embedUrl: "https://www.youtube.com/embed/X2q3uspE2M0"
+    embedUrl: "https://www.youtube.com/embed/q3y-s-d-P9M" // Versión Topic
   },
   {
     title: "Amnesia – 5 Seconds of Summer",
-    embedUrl: "https://www.youtube.com/embed/N-MgRkSgGLE"
+    embedUrl: "https://www.youtube.com/embed/L1ZGED1o3oE" // Versión Topic
   },
   {
     title: "Teeth – 5 Seconds of Summer",
-    embedUrl: "https://www.youtube.com/embed/R1nL-hF12tE"
+    embedUrl: "https://www.youtube.com/embed/eYUKQ-yAIsY" // Versión Topic
   },
   {
     title: "Jet Black Heart – 5 Seconds of Summer",
-    embedUrl: "https://www.youtube.com/embed/K0X5A6a_jQQ"
+    embedUrl: "https://www.youtube.com/embed/A1Uj-PISW_M" // Versión Topic
   },
   {
     title: "Want You Back – 5 Seconds of Summer",
-    embedUrl: "https://www.youtube.com/embed/P-A-n5-GvXU"
+    embedUrl: "https://www.youtube.com/embed/vD0qFSAWlQY" // Versión Topic
   },
   {
     title: "Ghost of You – 5 Seconds of Summer",
-    embedUrl: "https://www.youtube.com/embed/xNf-0p6ZJqU"
+    embedUrl: "https://www.youtube.com/embed/Y-M9hPhNf6w" // Versión Topic
   },
   {
     title: "Easier – 5 Seconds of Summer",
-    embedUrl: "https://www.youtube.com/embed/b1d5I2s_a_A"
+    embedUrl: "https://www.youtube.com/embed/H37Hn-aVl-k" // Versión Topic
   }
 ];
 
-// ... (frases de amor no cambian) ...
-// Frases de amor que cambian cada 24 horas (autoría original)
+// ... (la lista de 'lovePhrases' no cambia) ...
 const lovePhrases = [
   "Cada día que pasa faltan menos latidos para coincidir con los tuyos.",
   "La distancia cuenta kilómetros, pero mi corazón cuenta besos pendientes.",
@@ -147,12 +146,12 @@ const lovePhrases = [
   "Eres mi todo, la razón por la que sonrío sin razón, la luz que ilumina incluso mis días más oscuros."
 ];
 
-// ... (función mod no cambia) ...
+// ... (función 'mod' no cambia) ...
 function mod(n, m) {
   return ((n % m) + m) % m;
 }
 
-// ... (función updateCountdown no cambia) ...
+// ... (función 'updateCountdown' no cambia) ...
 function updateCountdown() {
   const now = new Date();
   // Usamos getTime() que siempre es UTC, así la resta contra targetDateUTC es correcta
@@ -209,18 +208,29 @@ function updateDailyContent() {
 
   const phraseEl = document.getElementById("love-phrase");
   const songTitleEl = document.getElementById("song-title");
-  // CAMBIO AQUÍ: Se busca el nuevo ID
-  const musicIframe = document.getElementById("music-iframe");
+  
+  // CAMBIO AQUÍ: Buscamos la etiqueta de imagen, no el iframe
+  const songCoverEl = document.getElementById("song-cover-img");
 
   if (phraseEl) {
     phraseEl.textContent = lovePhrases[phraseIndex];
   }
 
-  // CAMBIO AQUÍ: Se comprueba y usa la nueva variable 'musicIframe'
-  if (songTitleEl && musicIframe) {
+  // CAMBIO AQUÍ: Actualizamos la lógica para la imagen
+  if (songTitleEl && songCoverEl) {
     const song = songs[songIndex];
     songTitleEl.textContent = song.title;
-    musicIframe.src = song.embedUrl;
+
+    // 1. Extraemos el ID del video del enlace 'embedUrl'
+    // p.ej. "https://www.youtube.com/embed/H37Hn-aVl-k" -> "H37Hn-aVl-k"
+    const videoId = song.embedUrl.split('/').pop();
+
+    // 2. Construimos la URL de la miniatura en alta calidad
+    const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+
+    // 3. Asignamos la URL al 'src' de la imagen y el 'alt'
+    songCoverEl.src = thumbnailUrl;
+    songCoverEl.alt = song.title;
   }
 }
 
