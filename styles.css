@@ -216,20 +216,12 @@ body {
   font-weight: 500;
 }
 
-/* CAMBIO AQUÍ: Renombrada la clase */
-.music-container {
+.spotify-container {
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid rgba(137, 185, 173, 0.5);
   background: #000;
   margin-bottom: 0.5rem;
-}
-
-/* AÑADIMOS ESTA NUEVA REGLA PARA LA IMAGEN */
-.song-cover {
-  width: 100%;
-  display: block; /* Para que encaje bien en el div */
-  height: auto; /* Mantiene la proporción de la imagen */
 }
 
 .song-note {
