@@ -1,6 +1,6 @@
 // script.js
 
-// Constantes de tiempo
+// ... (constantes de tiempo no cambian) ...
 const MS_PER_SECOND = 1000;
 const MS_PER_MINUTE = MS_PER_SECOND * 60;
 const MS_PER_HOUR = MS_PER_MINUTE * 60;
@@ -9,102 +9,102 @@ const MS_PER_DAY = MS_PER_HOUR * 24;
 // Bogotá es UTC-5 (sin cambios por horario de verano)
 const BOGOTA_OFFSET_MS = -5 * MS_PER_HOUR;
 
-// Fecha objetivo: 1 de abril de 2026, 00:00 en Bogotá (equivale a 05:00 UTC)
+// ... (fecha objetivo no cambia) ...
 const targetDateUTC = Date.UTC(2026, 3, 1, 5, 0, 0);
 
-// Canciones para ir rotando cada día
+// CAMBIO AQUÍ: Actualizada la lista con URLs de YouTube
 const songs = [
   {
     title: "Eres Tú – Luis Fonsi",
-    embedUrl: "https://open.spotify.com/embed/track/5v3J7CimKjVznZn2Pj1ng5"
+    embedUrl: "https://www.youtube.com/embed/j-p9-v2-piM"
   },
   {
     title: "All of Me – John Legend",
-    embedUrl: "https://open.spotify.com/embed/track/1UBj9KDqlu2qYg2kzWwrzY"
+    embedUrl: "https://www.youtube.com/embed/450p7goxZem"
   },
   {
     title: "Amarillo – Shakira",
-    embedUrl: "https://open.spotify.com/embed/track/4VJVV1Jyy3bZVZobSsdxF0"
+    embedUrl: "https://www.youtube.com/embed/GUP-sA-sS2Q"
   },
   {
     title: "Fix You – Coldplay",
-    embedUrl: "https://open.spotify.com/embed/track/3f95I6Wk7BZB3s29m7MIpH"
+    embedUrl: "https://www.youtube.com/embed/k4V3Mo_OiMs"
   },
   {
     title: "Make You Feel My Love – Adele",
-    embedUrl: "https://open.spotify.com/embed/track/1I4vqOq0LlYkJTTI3hIpmR"
+    embedUrl: "https://www.youtube.com/embed/0put0_a--Ng"
   },
   {
     title: "Something – The Beatles",
-    embedUrl: "https://open.spotify.com/embed/track/1ZcLrgsz6zXMpw6uyvF9m2"
+    embedUrl: "https://www.youtube.com/embed/UelDrZ1aFeY"
   },
   {
     title: "I'm Yours – Jason Mraz",
-    embedUrl: "https://open.spotify.com/embed/track/0i6oGpaBlG7M25pzA2jHoD"
+    embedUrl: "https://www.youtube.com/embed/EkHTsc9PU2A"
   },
   {
     title: "We Found Love – Rihanna",
-    embedUrl: "https://open.spotify.com/embed/track/0aY1y26JrM24p9Yj6hVuJ2"
+    embedUrl: "https://www.youtube.com/embed/tg00YEETFzg"
   },
   {
     title: "Stand By Me – Ben E. King",
-    embedUrl: "https://open.spotify.com/embed/track/4F1K9tbT59WwFyZfgYbEX9"
+    embedUrl: "https://www.youtube.com/embed/hwZNL7QVJjE"
   },
   {
     title: "The Way You Look Tonight – Frank Sinatra",
-    embedUrl: "https://open.spotify.com/embed/track/0FlO17fq7A2o3TA7Jg3jw7"
+    embedUrl: "https://www.youtube.com/embed/h9M8N-mQh3I"
   },
   {
     title: "Para Tu Amor – Juanes",
-    embedUrl: "https://open.spotify.com/embed/track/4pucfRsz3Yk9TxmScc7Vq9"
+    embedUrl: "https://www.youtube.com/embed/sglv-sftG1I"
   },
   {
     title: "Stay With Me – Sam Smith",
-    embedUrl: "https://open.spotify.com/embed/track/1Iu6vVqZBwYh6v1AM85ts6"
+    embedUrl: "https://www.youtube.com/embed/pB-5XG-DbAA"
   },
   {
     title: "If I Ain't Got You – Alicia Keys",
-    embedUrl: "https://open.spotify.com/embed/track/1heFAhF9NzLDhY77V6Fv19"
+    embedUrl: "https://www.youtube.com/embed/Ju8Hr50ZN-k"
   },
   {
     title: "Can't Help Falling In Love – Elvis Presley",
-    embedUrl: "https://open.spotify.com/embed/track/7d1xzo0a9Rhq9nDbZf4r2n"
+    embedUrl: "https://www.youtube.com/embed/vYCh7aL7_E4"
   },
   {
     title: "Youngblood – 5 Seconds of Summer",
-    embedUrl: "https://open.spotify.com/embed/track/2iUXsYOEPhVqEBwsqP70rE"
+    embedUrl: "https://www.youtube.com/embed/-RJSbO8YLgI"
   },
   {
     title: "She Looks So Perfect – 5 Seconds of Summer",
-    embedUrl: "https://open.spotify.com/embed/track/1gugDOSMREb34Xo0c1PlxM"
+    embedUrl: "https://www.youtube.com/embed/X2q3uspE2M0"
   },
   {
     title: "Amnesia – 5 Seconds of Summer",
-    embedUrl: "https://open.spotify.com/embed/track/1JCCdiru7fhstOIF4N7WJC"
+    embedUrl: "https://www.youtube.com/embed/N-MgRkSgGLE"
   },
   {
     title: "Teeth – 5 Seconds of Summer",
-    embedUrl:
-      "https://open.spotify.com/embed/track/26wLOs3ZuHJa2Ihhx6QIE6?utm_source=generator"
+    embedUrl: "https://www.youtube.com/embed/R1nL-hF12tE"
   },
   {
     title: "Jet Black Heart – 5 Seconds of Summer",
-    embedUrl: "https://open.spotify.com/embed/track/1KAkTstWzEOT24VqCDkKdl"
+    embedUrl: "https://www.youtube.com/embed/K0X5A6a_jQQ"
   },
   {
     title: "Want You Back – 5 Seconds of Summer",
-    embedUrl: "https://open.spotify.com/embed/track/2vHfabj6nFebekTYODqntl"
+    embedUrl: "https://www.youtube.com/embed/P-A-n5-GvXU"
   },
   {
     title: "Ghost of You – 5 Seconds of Summer",
-    embedUrl: "https://open.spotify.com/embed/track/1MhXdlCQPnO56T57MfmaRm"
+    embedUrl: "https://www.youtube.com/embed/xNf-0p6ZJqU"
   },
   {
     title: "Easier – 5 Seconds of Summer",
-    embedUrl: "https://open.spotify.com/embed/track/2bjUEg4jBtKBlPdNrTAppI"
+    embedUrl: "https://www.youtube.com/embed/b1d5I2s_a_A"
   }
 ];
 
+// ... (frases de amor no cambian) ...
 // Frases de amor que cambian cada 24 horas (autoría original)
 const lovePhrases = [
   "Cada día que pasa faltan menos latidos para coincidir con los tuyos.",
@@ -147,12 +147,12 @@ const lovePhrases = [
   "Eres mi todo, la razón por la que sonrío sin razón, la luz que ilumina incluso mis días más oscuros."
 ];
 
-// Función módulo segura para índices (maneja números negativos)
+// ... (función mod no cambia) ...
 function mod(n, m) {
   return ((n % m) + m) % m;
 }
 
-// Actualiza la cuenta regresiva
+// ... (función updateCountdown no cambia) ...
 function updateCountdown() {
   const now = new Date();
   // Usamos getTime() que siempre es UTC, así la resta contra targetDateUTC es correcta
@@ -209,20 +209,22 @@ function updateDailyContent() {
 
   const phraseEl = document.getElementById("love-phrase");
   const songTitleEl = document.getElementById("song-title");
-  const spotifyIframe = document.getElementById("spotify-iframe");
+  // CAMBIO AQUÍ: Se busca el nuevo ID
+  const musicIframe = document.getElementById("music-iframe");
 
   if (phraseEl) {
     phraseEl.textContent = lovePhrases[phraseIndex];
   }
 
-  if (songTitleEl && spotifyIframe) {
+  // CAMBIO AQUÍ: Se comprueba y usa la nueva variable 'musicIframe'
+  if (songTitleEl && musicIframe) {
     const song = songs[songIndex];
     songTitleEl.textContent = song.title;
-    spotifyIframe.src = song.embedUrl;
+    musicIframe.src = song.embedUrl;
   }
 }
 
-// Inicializa todo cuando el DOM está listo
+// ... (el 'DOMContentLoaded' no cambia) ...
 document.addEventListener("DOMContentLoaded", () => {
   updateCountdown();
   // Actualizar la cuenta regresiva cada segundo
