@@ -57,10 +57,17 @@
         <h2>La canción de hoy es 🎧</h2>
         <p id="song-title" class="song-title"></p>
 
-        <!-- CAMBIOS AQUÍ: El div y el iframe tienen nuevos 'class' e 'id' -->
-        <div class="music-container">
-          <!-- SACAMOS EL IFRAME Y PONEMOS UNA IMAGEN -->
-          <img id="song-cover-img" class="song-cover" src="" alt="Portada de la canción del día" />
+        <div class="spotify-container">
+          <iframe
+            id="spotify-iframe"
+            style="border-radius:12px"
+            src=""
+            width="100%"
+            height="152"
+            frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          ></iframe>
         </div>
 
         <p class="song-note">
