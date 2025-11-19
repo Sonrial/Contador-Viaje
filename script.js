@@ -23,6 +23,10 @@ const songs = [
     embedUrl: "https://open.spotify.com/embed/track/1UBj9KDqlu2qYg2kzWwrzY"
   },
   {
+    title: "Perfecta – Reik",
+    embedUrl: "https://open.spotify.com/intl-es/track/6VOb0Kkrd45Bp5RHYSla2J"
+  },
+  {
     title: "Amarillo – Shakira",
     embedUrl: "https://open.spotify.com/embed/track/4VJVV1Jyy3bZVZobSsdxF0"
   },
@@ -126,10 +130,7 @@ const lovePhrases = [
   "El universo se hizo pequeño desde que decidí que mi mundo eres tú.",
   "Tus pasos hacia mí ya se escuchan en mi corazón.",
   "Te espero no con paciencia, sino con ilusión, que es mucho más bonita.",
-  // ----- ¡¡ERROR CORREGIDO!! -----
-  // La siguiente línea no tenía una coma al final, lo que rompía todo el script.
   "Cuando por fin te abrace, todos estos días van a tener sentido.",
-  // -------------------------------
   "Te amé desde que mis ojos te vieron, y te seguiré amando hasta que mis ojos dejen de ver.",
   "No hay distancia que impida que mi amor por ti crezca más, porque cada pensamiento mío llega hasta ti en cada latido.",
   "Si pudiera regalarte algo, te regalaría la capacidad de verte a través de mis ojos. Entonces, verías cuánto te amo.",
