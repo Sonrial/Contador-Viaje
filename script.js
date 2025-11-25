@@ -176,7 +176,7 @@ function checkSpecialEvents() {
   if (month === 11 && day === 7) {
     isSpecialDay = true;
     eventTitle = "¡Día de las Velitas! 🕯️🇨🇴";
-    eventMessage = "Hoy en Colombia encendemos velitas para pedir deseos. Amor, hoy enciendo una luz especial por ti, para que iluminen tu camino hasta que llegues a mí. ¡Te extraño!";
+    eventMessage = "Hoy en Colombia encendemos velitas para pedir deseos. Bibi, hoy enciendo una luz especial por ti, para que iluminen tu camino hasta que llegues a mí. ¡Te extraño!";
     eventEmoji = "🕯️";
     effectsType = "candles";
   }
@@ -184,7 +184,7 @@ function checkSpecialEvents() {
   else if (month === 11 && (day === 24 || day === 25)) {
     isSpecialDay = true;
     eventTitle = "¡Feliz Navidad, mi amor! 🎄";
-    eventMessage = "Aunque estemos lejos esta Navidad, mi mejor regalo eres tú. Espero que el próximo año pueda abrazarte bajo el árbol.";
+    eventMessage = "Aunque estemos lejos esta Navidad, mi mejor regalo eres tú. Espero que el próximo año pueda abrazarte y celebrarlo juntos.";
     eventEmoji = "🎁";
     effectsType = "snow";
   }
@@ -200,7 +200,7 @@ function checkSpecialEvents() {
   else if (month === 1 && day === 14) {
     isSpecialDay = true;
     eventTitle = "¡Feliz Cumpleaños y San Valentín! 🎂💘";
-    eventMessage = "Hoy celebra el mundo el amor, pero yo celebro que naciste tú. Eres mi regalo favorito de la vida. ¡Te amo infinito!";
+    eventMessage = "Hoy celebra el mundo el amor, pero yo celebro que naciste tú. Eres mi regalo favorito de la vida. ¡Te amo infinito bibilinda!";
     eventEmoji = "💝";
     effectsType = "hearts";
   }
@@ -209,7 +209,7 @@ function checkSpecialEvents() {
   else if (day === 25) {
     isSpecialDay = true;
     eventTitle = "¡Feliz Bibimes! 🐼💕";
-    eventMessage = "¡Otro mes más a la cuenta! Gracias por hacerme tan feliz cada día. Ya falta menos para celebrar estos días en persona.";
+    eventMessage = "¡Otro mes más juntos, bibiciosa! Gracias por hacerme tan feliz cada día. Ya falta menos para celebrar estos días en persona.";
     eventEmoji = "📅";
     effectsType = "hearts";
   }
