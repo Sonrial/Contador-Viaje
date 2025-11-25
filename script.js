@@ -183,7 +183,7 @@ function checkSpecialEvents() {
   // 2. NAVIDAD (24 y 25 de Diciembre)
   else if (month === 11 && (day === 24 || day === 25)) {
     isSpecialDay = true;
-    eventTitle = "¡Feliz Navidad, mi amor! 🎄";
+    eventTitle = "¡Feliz Navidad, mi bibiciosa bibilinda! 🎄";
     eventMessage = "Aunque estemos lejos esta Navidad, mi mejor regalo eres tú. Espero que el próximo año pueda abrazarte y celebrarlo juntos.";
     eventEmoji = "🎁";
     effectsType = "snow";
@@ -192,7 +192,7 @@ function checkSpecialEvents() {
   else if ((month === 11 && day === 31) || (month === 0 && day === 1)) {
     isSpecialDay = true;
     eventTitle = "¡Feliz Año Nuevo! 🥂";
-    eventMessage = "Un año menos para vernos, un año más para amarnos. Gracias por ser mi compañera de vida otro año más.";
+    eventMessage = "Un año más juntos, un año más para amarnos. Gracias por ser mi compañera de vida otro año más.";
     eventEmoji = "🎆";
     effectsType = "confetti";
   }
