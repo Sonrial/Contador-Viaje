@@ -1,87 +1,104 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <title>Cuenta regresiva para verte, bibiciosa 💕</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cuenta regresiva para verte, bibiciosa 💕</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Fuentes bonitas -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@600;700&display=swap"
-    rel="stylesheet"
-  />
+    <!-- Fuentes bonitas de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Enlace a tu hoja de estilos -->
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div class="background-hearts"></div>
+    <!-- Enlace a tu hoja de estilos -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Contenedor para el fondo animado de corazones -->
+    <div class="background-hearts"></div>
 
-  <main class="main-container">
-    <header class="hero">
-      <p class="subtitle">Cuenta regresiva en hora de Colombia 🇨🇴</p>
-      <h1 class="title">Faltan</h1>
-      <p class="caption">
-        para abrazarte el <strong>1 de abril de 2026</strong> 🥹✨
-      </p>
-    </header>
+    <!-- Contenedor para efectos especiales (lluvia de emojis, nieve, velitas) -->
+    <div id="effects-container" class="effects-container"></div>
 
-    <section class="countdown" aria-label="Cuenta regresiva al viaje">
-      <div class="time-box">
-        <span id="days" class="time-number">0</span>
-        <span class="time-label">días</span>
+    <!-- VENTANA MODAL DE EVENTOS ESPECIALES (Por defecto oculta) -->
+    <div id="event-modal" class="event-modal hidden">
+      <div class="modal-content">
+        <span id="close-modal" class="close-btn">&times;</span>
+        <h2 id="event-title" class="event-title">¡Título del Evento!</h2>
+        <div id="event-emoji" class="event-main-emoji">🎉</div>
+        <p id="event-message" class="event-message">Mensaje especial aquí...</p>
       </div>
-      <div class="time-box">
-        <span id="hours" class="time-number">0</span>
-        <span class="time-label">horas</span>
-      </div>
-      <div class="time-box">
-        <span id="minutes" class="time-number">0</span>
-        <span class="time-label">minutos</span>
-      </div>
-      <div class="time-box">
-        <span id="seconds" class="time-number">0</span>
-        <span class="time-label">segundos</span>
-      </div>
-    </section>
+    </div>
 
-    <section class="content-grid">
-      <article class="card phrase-card">
-        <h2>La frase de amor de hoy 💌</h2>
-        <p id="love-phrase" class="love-phrase"></p>
-      </article>
-
-      <article class="card song-card">
-        <h2>La canción de hoy es 🎧</h2>
-        <p id="song-title" class="song-title"></p>
-
-        <div class="spotify-container">
-          <iframe
-            id="spotify-iframe"
-            style="border-radius:12px"
-            src=""
-            width="100%"
-            height="152"
-            frameborder="0"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-          ></iframe>
-        </div>
-
-        <p class="song-note">
-          (La canción cambia automáticamente cada día según la hora de Colombia)
+    <main class="main-container">
+      <header class="hero">
+        <p class="subtitle">Cuenta regresiva en hora de Colombia 🇨🇴</p>
+        <h1 class="title">Faltan</h1>
+        <p class="caption">
+          para abrazarte el <strong>1 de abril de 2026</strong> 🥹✨
         </p>
-      </article>
-    </section>
+      </header>
 
-    <footer class="footer">
-      <p>Hecho con ❤️ para ti.</p>
-    </footer>
-  </main>
+      <!-- Sección del Contador -->
+      <section class="countdown" aria-label="Cuenta regresiva al viaje">
+        <div class="time-box">
+          <span id="days" class="time-number">0</span>
+          <span class="time-label">días</span>
+        </div>
+        <div class="time-box">
+          <span id="hours" class="time-number">0</span>
+          <span class="time-label">horas</span>
+        </div>
+        <div class="time-box">
+          <span id="minutes" class="time-number">0</span>
+          <span class="time-label">minutos</span>
+        </div>
+        <div class="time-box">
+          <span id="seconds" class="time-number">0</span>
+          <span class="time-label">segundos</span>
+        </div>
+      </section>
 
-  <!-- Enlace a tu script -->
-  <script src="script.js"></script>
-</body>
+      <!-- Sección de contenido diario (Frase y Canción) -->
+      <section class="content-grid">
+        <article class="card phrase-card">
+          <h2>La frase de amor de hoy 💌</h2>
+          <p id="love-phrase" class="love-phrase"></p>
+        </article>
+
+        <article class="card song-card">
+          <h2>La canción de hoy es 🎧</h2>
+          <p id="song-title" class="song-title"></p>
+
+          <div class="spotify-container">
+            <!-- El src se llena con Javascript -->
+            <iframe
+              id="spotify-iframe"
+              style="border-radius:12px"
+              src=""
+              width="100%"
+              height="152"
+              frameborder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            ></iframe>
+          </div>
+
+          <p class="song-note">
+            (La canción cambia automáticamente cada día según la hora de Colombia)
+          </p>
+        </article>
+      </section>
+
+      <footer class="footer">
+        <p>Hecho con ❤️ para ti, mi vida.</p>
+      </footer>
+    </main>
+
+    <!-- Enlace a tu script -->
+    <script src="script.js"></script>
+  </body>
 </html>
