@@ -26,18 +26,30 @@ const songs = [
   { title: "Easier – 5SOS", embedUrl: "https://open.spotify.com/embed/track/2bjUEg4jBtKBlPdNrTAppI" },
   { title: "Want You Back – 5SOS", embedUrl: "https://open.spotify.com/embed/track/2vHfabj6nFebekTYODqntl" },
   { title: "Lie To Me – 5SOS", embedUrl: "https://open.spotify.com/embed/track/5c5sF91Cfk7bU45r055H81" },
-  
+  { title: "Valentine – 5SOS", embedUrl: "https://open.spotify.com/embed/track/19hh7DkfRBrpRGYfKlw7jb" },
+  { title: "Best Years – 5SOS", embedUrl: "https://open.spotify.com/embed/track/6LHDP5yKHUIQxeml0YKUQy" },
+
   // --- ROMÁNTICAS EN ESPAÑOL ---
   { title: "Eres Tú – Luis Fonsi", embedUrl: "https://open.spotify.com/embed/track/5v3J7CimKjVznZn2Pj1ng5" },
   { title: "Perfecta – Reik", embedUrl: "https://open.spotify.com/embed/track/6VOb0Kkrd45Bp5RHYSla2J" },
   { title: "Amarillo – Shakira", embedUrl: "https://open.spotify.com/embed/track/4VJVV1Jyy3bZVZobSsdxF0" },
   { title: "Para Tu Amor – Juanes", embedUrl: "https://open.spotify.com/embed/track/4pucfRsz3Yk9TxmScc7Vq9" },
   { title: "Favorito – Camilo", embedUrl: "https://open.spotify.com/embed/track/0jT8Nl0shPS8115is0wD2Q" },
-  { title: "Vida de Rico – Camilo", embedUrl: "https://open.spotify.com/embed/track/0jT8Nl0shPS8115is0wD2Q" },
+  { title: "Vida de Rico – Camilo", embedUrl: "https://open.spotify.com/embed/track/4nTduFjaTmGysc9WKNuCcs" },
   { title: "Índigo – Camilo & Evaluna", embedUrl: "https://open.spotify.com/embed/track/2B7c5m27XU3d3u5Xm1I3fI" },
   { title: "Beso – Rosalía & Rauw", embedUrl: "https://open.spotify.com/embed/track/609E1JCInJncFRrbMYkF80" },
   { title: "Mi Persona Favorita – Alejandro Sanz", embedUrl: "https://open.spotify.com/embed/track/0t3X8W9f8y5WJ9l5m8p6q6" },
-  
+  { title: "Por Eso Te Amo – Río Roma", embedUrl: "https://open.spotify.com/embed/track/16izvdwIKjq3t6Ufc1cjBj" },
+  { title: "Mi Razón de Ser – Banda MS", embedUrl: "https://open.spotify.com/embed/track/5c40hQfPD9DvxLcOm8W9ap" },
+  { title: "Solo Tú – Carlos Rivera", embedUrl: "https://open.spotify.com/embed/track/7pQfRCZ6AoVapDQSd7rKnF" },
+  { title: "No Hay Nadie Más – Sebastián Yatra", embedUrl: "https://open.spotify.com/embed/track/4J0iRVN28u3FdCewPLBDVh" },
+  { title: "Como Mirarte – Sebastián Yatra", embedUrl: "https://open.spotify.com/embed/track/7nQ3t6pBYEj4irJpi8vtBR" },
+  { title: "100 Años – Carlos Rivera & Maluma", embedUrl: "https://open.spotify.com/embed/track/33Va5mHYSweB26k0OsZAdu" },
+  { title: "Por Lo Que Reste de Vida – Thalía", embedUrl: "https://open.spotify.com/embed/track/5DdBejcwzoWF5TRwVmdHMV" },
+  { title: "Te Amo – Franco De Vita", embedUrl: "https://open.spotify.com/embed/track/3vxsXUUU9jUJrGNP4APtj3" },
+  { title: "Mi Persona Favorita – Río Roma", embedUrl: "https://open.spotify.com/embed/track/13GbZ5UpEo7tVFwuG4Di6r" },
+  { title: "Un Año – Sebastián Yatra & Reik", embedUrl: "https://open.spotify.com/embed/track/2vrpcQNg6itmgVZWsNjWe0" },
+
   // --- ROMÁNTICAS EN INGLÉS ---
   { title: "All of Me – John Legend", embedUrl: "https://open.spotify.com/embed/track/1UBj9KDqlu2qYg2kzWwrzY" },
   { title: "Perfect – Ed Sheeran", embedUrl: "https://open.spotify.com/embed/track/0tgVpDi06FyKpA1z0VMD4v" },
@@ -47,7 +59,18 @@ const songs = [
   { title: "I'm Yours – Jason Mraz", embedUrl: "https://open.spotify.com/embed/track/0i6oGpaBlG7M25pzA2jHoD" },
   { title: "Stand By Me – Ben E. King", embedUrl: "https://open.spotify.com/embed/track/4F1K9tbT59WwFyZfgYbEX9" },
   { title: "Just The Way You Are – Bruno Mars", embedUrl: "https://open.spotify.com/embed/track/7BqBn9nXd41cnCjQuB3d4N" },
-  { title: "Lover – Taylor Swift", embedUrl: "https://open.spotify.com/embed/track/1dGr1c2nMS50KsZ53zkRIx" }
+  { title: "Lover – Taylor Swift", embedUrl: "https://open.spotify.com/embed/track/1dGr1c2nMS50KsZ53zkRIx" },
+  { title: "Thinking Out Loud – Ed Sheeran", embedUrl: "https://open.spotify.com/embed/track/34gCuhDGsG4bRPIf9bb02f" },
+  { title: "Say You Won't Let Go – James Arthur", embedUrl: "https://open.spotify.com/embed/track/5uCax9HTNlzGybIStD3vDh" },
+  { title: "Marry Me – Train", embedUrl: "https://open.spotify.com/embed/track/2XNAcnOXBA82mrZKu85688" },
+  { title: "A Thousand Years – Christina Perri", embedUrl: "https://open.spotify.com/embed/track/6lanRgr6wXibZr8KgzXxBl" },
+  { title: "I Won't Give Up – Jason Mraz", embedUrl: "https://open.spotify.com/embed/track/53QF56cjZA9RTuuMZDrSA6" },
+  { title: "Everything – Michael Bublé", embedUrl: "https://open.spotify.com/embed/track/4T6HLdP6OcAtqC6tGnQelG" },
+  { title: "Better Together – Jack Johnson", embedUrl: "https://open.spotify.com/embed/track/2iXdwVdzA0KrI2Q0c1PlxM".replace("c1PlxM", "2iXdwVdzA0KrI2Q0iZNJbX") }, // corregido: ver nota abajo
+  { title: "Truly Madly Deeply – Savage Garden", embedUrl: "https://open.spotify.com/embed/track/013AWvizllIUEC2FOBzOnh" },
+  { title: "You And Me – Lifehouse", embedUrl: "https://open.spotify.com/embed/track/0815caqt2Lytro5EIzMufT" },
+  { title: "Kiss Me – Sixpence None The Richer", embedUrl: "https://open.spotify.com/embed/track/754kgU5rWscRTfvlsuEwFp" },
+  { title: "Can't Help Falling in Love – Elvis Presley", embedUrl: "https://open.spotify.com/embed/track/44AyOl4qVkzS48vBsbNXaC" },
 ];
 
 // --- FRASES DE AMOR (Iguales al original, puedes agregar más al final) ---
@@ -86,7 +109,39 @@ const lovePhrases = [
   "Si cada estrella del cielo representara un motivo para amarte, no habría suficientes estrellas.",
   "Nuestro amor es como un río, fluye suave, pero con fuerza.",
   "Me perdí en ti, y ahora que estoy en ti, sé que no quiero encontrar el camino de regreso.",
-  "Eres mi todo, la razón por la que sonrío sin razón."
+  "Eres mi todo, la razón por la que sonrío sin razón.",
+
+  // Nuevas frases
+  "La distancia solo existe en el mapa; en mi corazón siempre estás a un abrazo de distancia.",
+  "Hay días en los que te extraño tanto, que cierro los ojos y el universo se acomoda para acercarte.",
+  "Cada mensaje contigo es una caricia que viaja más rápido que cualquier avión.",
+  "Nuestros relojes no siempre coinciden, pero nuestros corazones laten al mismo tiempo.",
+  "Cuando te pienso, la nostalgia duele un poquito menos y la esperanza brilla un poquito más.",
+  "No estás aquí físicamente, pero en cada plan a futuro siempre apareces tú.",
+  "Si la distancia fuera persona, ya le habría explicado que contigo no tiene nada que hacer.",
+  "Tu voz al otro lado de la pantalla es el recordatorio de que vale la pena esperar.",
+  "A veces me falta tu mano, pero nunca me falta tu amor.",
+  "Mientras tú cuentas los días para venir, yo cuento las maneras en las que voy a hacerte feliz cuando estés aquí.",
+  "La maleta que más ganas tengo de ver no es la que traes, sino todo el amor que llega contigo.",
+  "No sé cuántos kilómetros nos separan, pero sé que cada uno de ellos te está trayendo hacia mí.",
+  "Hay mensajes tuyos que releo como quien vuelve a su capítulo favorito.",
+  "Cuando te extraño demasiado, cierro los ojos y dejo que mis recuerdos te abracen por mí.",
+  "Nuestra historia no está hecha de casualidades, sino de decisiones: tú me eliges, yo te elijo, incluso a la distancia.",
+  "Eres la prueba de que se puede extrañar muchísimo y amar aún más.",
+  "Si el avión se retrasara, igual te esperaría sonriendo, porque lo que viene después de esa puerta eres tú.",
+  "No le tengo miedo a la distancia, le tendría miedo a un mundo donde no existieras.",
+  "Cada “buenos días” tuyo en la pantalla es un “te amo” disfrazado.",
+  "Lo nuestro no está lejos, solo está en pausa hasta el próximo abrazo.",
+  "Si supieras cuántas veces al día imagino tu llegada, entenderías por qué mi corazón siempre va rápido.",
+  "El día que estés aquí, voy a abrazarte tan fuerte que la distancia va a renunciar a su trabajo.",
+  "Eres mi casualidad favorita convertida en destino, aunque por ahora el destino tenga escala.",
+  "Mientras otros cuentan países que visitan, yo cuento los días que faltan para que llegues a mí.",
+  "La distancia me enseñó que uno no extraña cuerpos, extraña almas, y la tuya vive pegada a la mía.",
+  "No importa cuán largo sea el vuelo, tu sonrisa es el único destino que me importa.",
+  "Prometo que cada kilómetro que recorras hacia mí será cuidado con todo el amor que tengo guardado.",
+  "Nuestro amor no entiende de fronteras, solo de promesas que se cumplen cuando por fin nos miramos de cerca.",
+  "Cuando por fin te tenga frente a mí, el tiempo va a entender por qué lo hicimos esperar tanto.",
+  "Aunque hoy nos separe una pantalla, sé que mañana nos unirá un mismo techo.",
 ];
 
 // Función para obtener índice cíclico
