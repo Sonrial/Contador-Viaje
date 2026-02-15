@@ -1,104 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Cuenta regresiva para verte, bibiciosa 💕</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestro Espacio Diario ✨</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-    <!-- Fuentes bonitas de Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@600;700&display=swap"
-      rel="stylesheet"
-    />
+    <div class="background-animation"></div>
 
-    <!-- Enlace a tu hoja de estilos -->
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <!-- Contenedor para el fondo animado de corazones -->
-    <div class="background-hearts"></div>
+    <main class="container">
+        <header class="header">
+            <p class="subtitle">Bienvenida a tu dosis diaria de</p>
+            <h1>Cosas que no sabías (y cosas que te amo)</h1>
+        </header>
 
-    <!-- Contenedor para efectos especiales (lluvia de emojis, nieve, velitas) -->
-    <div id="effects-container" class="effects-container"></div>
+        <div class="bento-grid">
+            
+            <article class="card curiosity-card">
+                <div class="card-icon">🧠</div>
+                <div class="card-content">
+                    <h3>¿Sabías esto?</h3>
+                    <p id="daily-fact">Cargando dato inteligente...</p>
+                    <div class="tag">Ciencia y Cultura</div>
+                </div>
+            </article>
 
-    <!-- VENTANA MODAL DE EVENTOS ESPECIALES (Por defecto oculta) -->
-    <div id="event-modal" class="event-modal hidden">
-      <div class="modal-content">
-        <span id="close-modal" class="close-btn">&times;</span>
-        <h2 id="event-title" class="event-title">¡Título del Evento!</h2>
-        <div id="event-emoji" class="event-main-emoji">🎉</div>
-        <p id="event-message" class="event-message">Mensaje especial aquí...</p>
-      </div>
-    </div>
+            <article class="card question-card">
+                <div class="card-icon">💬</div>
+                <h3>Pregunta para hoy</h3>
+                <p id="daily-question">...</p>
+                <small>¡Respóndeme por WhatsApp!</small>
+            </article>
 
-    <main class="main-container">
-      <header class="hero">
-        <p class="subtitle">Cuenta regresiva en hora de Colombia 🇨🇴</p>
-        <h1 class="title">Faltan</h1>
-        <p class="caption">
-          para abrazarte el <strong>1 de abril de 2026</strong> 🥹✨
-        </p>
-      </header>
+            <article class="card challenge-card">
+                <div class="card-icon">⚡</div>
+                <h3>Reto Express</h3>
+                <p id="daily-challenge">...</p>
+            </article>
 
-      <!-- Sección del Contador -->
-      <section class="countdown" aria-label="Cuenta regresiva al viaje">
-        <div class="time-box">
-          <span id="days" class="time-number">0</span>
-          <span class="time-label">días</span>
+            <article class="card love-card">
+                <div class="card-icon">❤️</div>
+                <h3>Nota Mental</h3>
+                <p>Aunque los planes cambien, mi equipo sigues siendo tú.</p>
+            </article>
+
         </div>
-        <div class="time-box">
-          <span id="hours" class="time-number">0</span>
-          <span class="time-label">horas</span>
-        </div>
-        <div class="time-box">
-          <span id="minutes" class="time-number">0</span>
-          <span class="time-label">minutos</span>
-        </div>
-        <div class="time-box">
-          <span id="seconds" class="time-number">0</span>
-          <span class="time-label">segundos</span>
-        </div>
-      </section>
 
-      <!-- Sección de contenido diario (Frase y Canción) -->
-      <section class="content-grid">
-        <article class="card phrase-card">
-          <h2>La frase de amor de hoy 💌</h2>
-          <p id="love-phrase" class="love-phrase"></p>
-        </article>
-
-        <article class="card song-card">
-          <h2>La canción de hoy es 🎧</h2>
-          <p id="song-title" class="song-title"></p>
-
-          <div class="spotify-container">
-            <!-- El src se llena con Javascript -->
-            <iframe
-              id="spotify-iframe"
-              style="border-radius:12px"
-              src=""
-              width="100%"
-              height="152"
-              frameborder="0"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-            ></iframe>
-          </div>
-
-          <p class="song-note">
-            (La canción cambia automáticamente cada día según la hora de Colombia)
-          </p>
-        </article>
-      </section>
-
-      <footer class="footer">
-        <p>Hecho con ❤️ para ti, mi vida.</p>
-      </footer>
+        <footer class="footer">
+            <p>Hecho con código y cariño. Actualizado cada día.</p>
+        </footer>
     </main>
 
-    <!-- Enlace a tu script -->
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
