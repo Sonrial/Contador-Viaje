@@ -3,57 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestro Espacio Diario ✨</title>
+    <title>Daily Insight | Nosotros</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="background-animation"></div>
+    <div class="background-gradient"></div>
 
-    <main class="container">
-        <header class="header">
-            <p class="subtitle">Bienvenida a tu dosis diaria de</p>
-            <h1>Cosas que no sabías (y cosas que te amo)</h1>
+    <main class="dashboard-container">
+        
+        <header class="top-bar">
+            <div class="date-display" id="current-date">Cargando fecha...</div>
+            <div class="brand">Daily Sync</div>
         </header>
 
-        <div class="bento-grid">
+        <div class="grid-layout">
             
-            <article class="card curiosity-card">
-                <div class="card-icon">🧠</div>
-                <div class="card-content">
-                    <h3>¿Sabías esto?</h3>
-                    <p id="daily-fact">Cargando dato inteligente...</p>
-                    <div class="tag">Ciencia y Cultura</div>
-                </div>
-            </article>
+            <section class="main-column">
+                <article class="card hero-card">
+                    <div class="card-header">
+                        <span class="pill-badge">Curiosidad del Día</span>
+                        <span class="category-tag" id="fact-category">Ciencia</span>
+                    </div>
+                    <h1 id="daily-fact">Cargando conocimiento...</h1>
+                    <div class="decoration-line"></div>
+                    <p class="card-footer-text">Algo nuevo para aprender juntos.</p>
+                </article>
+            </section>
 
-            <article class="card question-card">
-                <div class="card-icon">💬</div>
-                <h3>Pregunta para hoy</h3>
-                <p id="daily-question">...</p>
-                <small>¡Respóndeme por WhatsApp!</small>
-            </article>
+            <aside class="side-column">
+                
+                <article class="card question-card">
+                    <div class="icon-header">💬</div>
+                    <h3>Tópico de Conversación</h3>
+                    <p id="daily-question">...</p>
+                </article>
 
-            <article class="card challenge-card">
-                <div class="card-icon">⚡</div>
-                <h3>Reto Express</h3>
-                <p id="daily-challenge">...</p>
-            </article>
+                <article class="card quote-card">
+                    <div class="icon-header">❝</div>
+                    <blockquote id="daily-quote">...</blockquote>
+                    <cite id="quote-author"></cite>
+                </article>
 
-            <article class="card love-card">
-                <div class="card-icon">❤️</div>
-                <h3>Nota Mental</h3>
-                <p>Aunque los planes cambien, mi equipo sigues siendo tú.</p>
-            </article>
-
+            </aside>
         </div>
 
-        <footer class="footer">
-            <p>Hecho con código y cariño. Actualizado cada día.</p>
+        <footer class="footer-bar">
+            <p>Conectados a la distancia.</p>
         </footer>
+
     </main>
 
     <script src="script.js"></script>

@@ -1,49 +1,51 @@
 document.addEventListener("DOMContentLoaded", () => {
+    updateDate();
     updateDailyContent();
 });
 
-// --- BASES DE DATOS DE CONTENIDO ---
+// 1. FUNCIÓN PARA FECHA ELEGANTE
+function updateDate() {
+    const dateElement = document.getElementById('current-date');
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const today = new Date();
+    // Capitalizar primera letra (ej: Lunes)
+    let dateString = today.toLocaleDateString('es-ES', options);
+    dateString = dateString.charAt(0).toUpperCase() + dateString.slice(1);
+    dateElement.textContent = dateString;
+}
+
+// 2. BASES DE DATOS (Contenido Profesional)
 
 const facts = [
-    { text: "Las nutrias se dan la mano cuando duermen para no separarse flotando.", category: "Animales" },
-    { text: "En Júpiter y Saturno llueven diamantes debido a la alta presión atmosférica.", category: "Espacio" },
-    { text: "Los pulpos tienen tres corazones y sangre azul.", category: "Biología" },
-    { text: "Cleopatra vivió más cerca de la invención del iPhone que de la construcción de las Pirámides.", category: "Historia" },
-    { text: "El agua caliente se congela más rápido que el agua fría bajo ciertas condiciones (Efecto Mpemba).", category: "Física" },
-    { text: "Las abejas pueden reconocer rostros humanos.", category: "Naturaleza" },
-    { text: "Es físicamente imposible tararear mientras te aprietas la nariz.", category: "Cuerpo Humano" },
-    { text: "El nombre completo de Barbie es Barbara Millicent Roberts.", category: "Curiosidades" },
-    { text: "En 10 minutos, un huracán libera más energía que todas las armas nucleares del mundo combinadas.", category: "Clima" },
-    { text: "Los flamencos nacen grises, su color rosa viene de su dieta de camarones.", category: "Animales" },
-    // ¡Añade más aquí! Intenta tener al menos 31 para variedad mensual
+    { text: "El 'olor a lluvia' tiene nombre científico: Petricor, y es causado por bacterias del suelo.", category: "Ciencia" },
+    { text: "Si pudieras doblar una hoja de papel 42 veces, su grosor llegaría hasta la Luna.", category: "Matemáticas" },
+    { text: "Las vacas tienen mejores amigas y se estresan si las separan.", category: "Naturaleza" },
+    { text: "La Universidad de Oxford es más antigua que el Imperio Azteca.", category: "Historia" },
+    { text: "Los humanos compartimos el 50% de nuestro ADN con los plátanos.", category: "Genética" },
+    { text: "Japón tiene una palabra, 'Tsundoku', para comprar libros y no leerlos.", category: "Cultura" },
+    // Agrega más...
 ];
 
 const questions = [
-    "Si pudieras cenar con cualquier personaje histórico, ¿quién sería?",
-    "¿Cuál es esa película que podrías ver 100 veces sin cansarte?",
-    "¿Qué es lo que más te gusta de tu personalidad?",
-    "Si ganáramos la lotería hoy, ¿qué sería lo primero que compraríamos?",
-    "¿Cuál fue tu travesura más grande de niño/a?",
-    "¿Qué superpoder tendrías: volar o ser invisible?",
-    "¿Cuál es el mejor consejo que te han dado?",
-    "Describe nuestro futuro juntos en 3 palabras.",
-    "¿Qué canción te recuerda automáticamente a mí?",
-    "Si fueramos animales, ¿cuáles seríamos?",
+    "¿Qué habilidad te gustaría dominar instantáneamente?",
+    "¿Cuál es el libro o película que cambió tu forma de pensar?",
+    "Si el dinero no importara, ¿a qué te dedicarías?",
+    "¿Qué consejo le darías a tu 'yo' de hace 5 años?",
+    "¿Cuál es tu lugar favorito en el mundo (en el que hayas estado)?",
+    "Define el éxito en una sola frase.",
+    // Agrega más...
 ];
 
-const challenges = [
-    "Mándame una foto de lo que estás comiendo ahora mismo.",
-    "Graba un audio de 10 segundos contando un chiste malo.",
-    "Busca una foto nuestra vieja y dime qué pensabas en ese momento.",
-    "Escribe 3 cosas por las que estás agradecido/a hoy.",
-    "Dibújame en una servilleta o papel y mándame la foto (no importa si queda mal).",
-    "Dedícame una historia de Instagram (o un estado) hoy.",
-    "Tómate 5 minutos para meditar o respirar profundo hoy.",
-    "Envíame un sticker que defina tu estado de ánimo actual.",
+const quotes = [
+    { text: "La vida es lo que pasa mientras estás ocupado haciendo otros planes.", author: "John Lennon" },
+    { text: "No cuentes los días, haz que los días cuenten.", author: "Muhammad Ali" },
+    { text: "La simplicidad es la máxima sofisticación.", author: "Leonardo da Vinci" },
+    { text: "Todo parece imposible hasta que se hace.", author: "Nelson Mandela" },
+    { text: "Sé el cambio que quieres ver en el mundo.", author: "Mahatma Gandhi" },
+    // Agrega más...
 ];
 
-// --- LÓGICA PARA SELECCIÓN DIARIA (MISMO DÍA = MISMO CONTENIDO) ---
-
+// 3. SELECCIÓN DIARIA SINCRONIZADA
 function getDayOfYear() {
     const now = new Date();
     const start = new Date(now.getFullYear(), 0, 0);
@@ -55,20 +57,21 @@ function getDayOfYear() {
 function updateDailyContent() {
     const dayIndex = getDayOfYear();
 
-    // Selección cíclica: usa el operador módulo (%) para rotar infinitamente
-    // aunque pasen los días y se acabe la lista.
+    // Índices cíclicos
     const factIndex = dayIndex % facts.length;
     const questionIndex = dayIndex % questions.length;
-    const challengeIndex = dayIndex % challenges.length;
+    const quoteIndex = dayIndex % quotes.length;
 
-    // Actualizar DOM
+    // Actualizar DOM - Curiosidad
     const factObj = facts[factIndex];
     document.getElementById("daily-fact").textContent = factObj.text;
-    
-    // Actualizar la etiqueta de categoría si existe
-    const tagElement = document.querySelector(".tag");
-    if(tagElement) tagElement.textContent = factObj.category;
+    document.getElementById("fact-category").textContent = factObj.category;
 
+    // Actualizar DOM - Pregunta
     document.getElementById("daily-question").textContent = questions[questionIndex];
-    document.getElementById("daily-challenge").textContent = challenges[challengeIndex];
+
+    // Actualizar DOM - Cita
+    const quoteObj = quotes[quoteIndex];
+    document.getElementById("daily-quote").textContent = `"${quoteObj.text}"`;
+    document.getElementById("quote-author").textContent = quoteObj.author;
 }
