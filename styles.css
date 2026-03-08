@@ -223,3 +223,77 @@ body {
         padding: 20px 15px;
     }
 }
+
+/* --- MODAL DE EVENTOS ESPECIALES --- */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 1000;
+    opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1; pointer-events: auto;
+}
+
+.modal-card {
+    background: var(--bg-dark);
+    border: 1px solid var(--accent-purple);
+    box-shadow: 0 0 40px rgba(167, 139, 250, 0.15);
+    padding: 40px; border-radius: 20px;
+    text-align: center; max-width: 90%; width: 450px;
+    position: relative;
+    transform: scale(0.9); transition: transform 0.4s ease;
+}
+
+.modal-overlay.active .modal-card {
+    transform: scale(1);
+}
+
+.close-btn {
+    position: absolute; top: 15px; right: 20px;
+    background: none; border: none; color: var(--text-muted);
+    font-size: 1.8rem; cursor: pointer; transition: color 0.3s;
+}
+
+.close-btn:hover { color: white; }
+
+.modal-icon { 
+    font-size: 4rem; 
+    margin-bottom: 15px; 
+    animation: floatIcon 3s ease-in-out infinite; 
+}
+
+.modal-card h2 {
+    font-family: var(--font-serif); font-size: 2rem;
+    color: var(--accent-gold); margin-bottom: 15px;
+}
+
+.modal-card p {
+    font-size: 1.1rem; line-height: 1.6; color: var(--text-main);
+}
+
+.hidden { display: none !important; }
+
+@keyframes floatIcon { 
+    0%, 100% { transform: translateY(0); } 
+    50% { transform: translateY(-10px); } 
+}
+
+/* --- EFECTOS VISUALES (LLUVIA) --- */
+.effects-container {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 999; overflow: hidden;
+}
+
+.falling-item {
+    position: absolute; top: -50px; font-size: 1.5rem;
+    animation: fall linear forwards; opacity: 0.8;
+}
+
+@keyframes fall { 
+    to { transform: translateY(110vh) rotate(360deg); } 
+}
