@@ -384,3 +384,110 @@ function updateDailyContent() {
     document.getElementById("daily-quote").textContent = `"${quoteObj.text}"`;
     document.getElementById("quote-author").textContent = quoteObj.author;
 }
+
+// --- SISTEMA DE EVENTOS ESPECIALES ---
+
+// Base de datos de fechas importantes
+// IMPORTANTE: El mes va del 1 al 12 (1 = Enero, 3 = Marzo, etc.)
+const specialDates = [
+    {
+        month: 3, 
+        day: 8,
+        title: "¡Feliz Día de la Mujer, Bibilinda! 🌸",
+        message: "Hoy celebro lo increíble, fuerte y maravillosa que eres. Admiro profundamente la mujer en la que te conviertes cada día. ¡Te amo muchísimo!",
+        icon: "💜",
+        effect: "flowers" // Opciones: 'flowers', 'hearts', 'snow', 'party'
+    },
+    {
+        month: 2, 
+        day: 14,
+        title: "¡Feliz Cumpleaños y San Valentín, Bibilinda! 🎂💘",
+        message: "Celebro tu vida hoy y siempre. Eres mi regalo favorito de la vida. ¡A disfrutar tu día!",
+        icon: "💝",
+        effect: "hearts"
+    },
+    {
+        month: 12, 
+        day: 24,
+        title: "¡Feliz Navidad! 🎄",
+        message: "Aunque estemos a distancia, mi corazón está celebrando contigo hoy.",
+        icon: "🎁",
+        effect: "snow"
+    },
+    {
+        month: 12, 
+        day: 31,
+        title: "¡Feliz Año Nuevo! 🥂",
+        message: "Por un año más compartiendo la vida juntos. ¡Te amo!",
+        icon: "🎆",
+        effect: "party"
+    }
+    // Para agregar más, solo copia un bloque de estos y pon la fecha que quieras.
+];
+
+function checkSpecialEvents() {
+    const today = new Date();
+    // Sumamos 1 al mes porque Javascript cuenta los meses desde 0 (Enero = 0)
+    const currentMonth = today.getMonth() + 1; 
+    const currentDay = today.getDate();
+
+    // Buscar si hay un evento para la fecha de hoy
+    const todayEvent = specialDates.find(event => event.month === currentMonth && event.day === currentDay);
+
+    if (todayEvent) {
+        // Llenar los textos de la ventana
+        document.getElementById('event-title').textContent = todayEvent.title;
+        document.getElementById('event-message').textContent = todayEvent.message;
+        document.getElementById('event-icon').textContent = todayEvent.icon;
+        
+        // Mostrar la ventana emergente
+        const modal = document.getElementById('special-event-modal');
+        modal.classList.remove('hidden');
+        
+        // Pequeño retraso para que la animación de entrada funcione suave
+        setTimeout(() => modal.classList.add('active'), 50);
+
+        // Configurar el botón de cerrar
+        document.getElementById('close-modal').onclick = () => {
+            modal.classList.remove('active');
+            setTimeout(() => modal.classList.add('hidden'), 400);
+        };
+
+        // Iniciar la lluvia de emojis
+        startEffects(todayEvent.effect);
+    }
+}
+
+function startEffects(type) {
+    const container = document.getElementById("effects-container");
+    container.innerHTML = ""; // Limpiar efectos anteriores
+    let emojis = [];
+    
+    // Elegir qué emojis van a caer según el tipo de evento
+    if (type === 'flowers') emojis = ['🌸', '🌺', '🌷', '✨'];
+    if (type === 'hearts') emojis = ['💜', '💖', '💕', '✨'];
+    if (type === 'snow') emojis = ['❄️', '🌨️', '⛄'];
+    if (type === 'party') emojis = ['🎉', '🎊', '🥳', '✨'];
+
+    // Crear 35 elementos cayendo
+    for (let i = 0; i < 35; i++) {
+        const el = document.createElement("div");
+        el.classList.add("falling-item");
+        el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        
+        // Posiciones, tamaños y velocidades aleatorias para que se vea natural
+        el.style.left = Math.random() * 100 + "vw";
+        el.style.animationDuration = (Math.random() * 3 + 3) + "s"; // Cae entre 3 y 6 seg
+        el.style.fontSize = (Math.random() * 1.2 + 0.8) + "rem";
+        el.style.animationDelay = Math.random() * 2 + "s"; // Retraso al iniciar
+        
+        container.appendChild(el);
+    }
+}
+
+// BUSCA ESTA PARTE en tu código actual y agrega la línea "checkSpecialEvents();"
+document.addEventListener("DOMContentLoaded", () => {
+    updateDate();
+    updateDailyContent();
+    checkSpecialEvents(); // <--- AGREGA ESTA LÍNEA AQUÍ
+});
